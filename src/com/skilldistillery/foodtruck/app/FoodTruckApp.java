@@ -23,7 +23,7 @@ public class FoodTruckApp {
 		System.out.println("# 1.List all existing food trucks.         #");
 		System.out.println("# 2.See the average rating of food trucks. #");
 		System.out.println("# 3.Display the highest-rated food truck.  #");
-		System.out.println("# 4.Quit        	                     tru #");
+		System.out.println("# 4.Quit        	                       #");
 		System.out.println("#                                          #");
 		System.out.println("############################################");
 	}
@@ -97,9 +97,17 @@ public class FoodTruckApp {
 		case 2:
 			showAverage(trucks);
 			break;
-		}
+		
+		case 3:
+			highestRated(trucks);
+			break;
+		case 4:
+			System.out.println("Thank you for using the Food Truck App!");
+			return false;
+	}
 		return true;
 	}
+
 
 	public void displayFoodTrucks(FoodTruck[] trucks) {
 		for (int i = 0; i < trucks.length; i++) {
@@ -117,5 +125,13 @@ public class FoodTruckApp {
 		double averageRating = sum / trucks.length;
 		System.out.println("The average rating of all of the trucks is: " + averageRating);
 	}
-
+	private void highestRated(FoodTruck[] trucks) {
+		double highestRated = trucks[0].getTruckRating();
+		for(int i = 0; i < trucks.length; i++) {
+			if(trucks[i].getTruckRating() > highestRated) {
+				highestRated = trucks[i].getTruckRating();
+				System.out.println(highestRated + " " + trucks[i].toString() );
+			}
+	}
+	}
 }
