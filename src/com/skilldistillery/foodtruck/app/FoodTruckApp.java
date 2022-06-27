@@ -23,7 +23,7 @@ public class FoodTruckApp {
 		System.out.println("# 1.List all existing food trucks.         #");
 		System.out.println("# 2.See the average rating of food trucks. #");
 		System.out.println("# 3.Display the highest-rated food truck.  #");
-		System.out.println("# 4.Quit        	                       #");
+		System.out.println("# 4.Quit        	                   #");
 		System.out.println("#                                          #");
 		System.out.println("############################################");
 	}
@@ -53,11 +53,11 @@ public class FoodTruckApp {
 				return exit;
 
 			} else {
-				System.out.println("Please enter the food type");
+				System.out.println("Please enter the food type.");
 				foodType = input.nextLine();
 			}
 			do {
-				System.out.println("Please enter your rating 1-5");
+				System.out.println("Please enter your rating 1-5.");
 				rating = input.nextDouble();
 				if (rating > 5 || rating < 1) {
 					System.out.println("The rating must be between 1-5. Please enter another rating.");
