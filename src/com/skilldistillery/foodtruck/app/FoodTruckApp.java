@@ -61,7 +61,7 @@ public class FoodTruckApp {
 				rating = input.nextDouble();
 				if (rating > 5 || rating < 1) {
 					System.out.println("The rating must be between 1-5. Please enter another rating.");
-				}
+				} 
 
 			} while (rating > 5 || rating < 1);
 			input.nextLine();
