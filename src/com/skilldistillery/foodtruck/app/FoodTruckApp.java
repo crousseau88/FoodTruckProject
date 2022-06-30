@@ -61,7 +61,7 @@ public class FoodTruckApp {
 				rating = input.nextDouble();
 				if (rating > 5 || rating < 1) {
 					System.out.println("The rating must be between 1-5. Please enter another rating.");
-				} 
+				}
 
 			} while (rating > 5 || rating < 1);
 			input.nextLine();
@@ -97,21 +97,19 @@ public class FoodTruckApp {
 		case 2:
 			showAverage(trucks);
 			break;
-		
+
 		case 3:
 			highestRated(trucks);
 			break;
 		case 4:
 			System.out.println("Thank you for using the Food Truck App!");
 			return false;
-	}
+		}
 		return true;
 	}
 
-
 	public void displayFoodTrucks(FoodTruck[] trucks) {
 		for (int i = 0; i < trucks.length; i++) {
-			System.out.println("All existing food trucks: ");
 			System.out.println(trucks[i].toString());
 
 		}
@@ -125,13 +123,18 @@ public class FoodTruckApp {
 		double averageRating = sum / trucks.length;
 		System.out.println("The average rating of all of the trucks is: " + averageRating);
 	}
+
 	private void highestRated(FoodTruck[] trucks) {
-		double highestRated = trucks[0].getTruckRating();
-		for(int i = 0; i < trucks.length; i++) {
-			if(trucks[i].getTruckRating() > highestRated) {
-				highestRated = trucks[i].getTruckRating();
-				System.out.println(highestRated + " " + trucks[i].toString() );
+		double highestRated = 0;
+		int index  = 0;
+		for (int i = 0; i < trucks.length; i++) {
+			if (trucks[i] != null) {
+				if (highestRated < trucks[i].getTruckRating()) {
+					highestRated = trucks[i].getTruckRating();
+					index = i;
+				}
 			}
-	}
+		}
+		System.out.println(trucks[index].toString());
 	}
 }
